@@ -1,0 +1,23 @@
+Exception ignored in: <function _xla_gc_callback at 0x75c92fc605e0>
+Traceback (most recent call last):
+  File "/home/yuan/VLA/openpi/.venv/lib/python3.11/site-packages/jax/_src/lib/__init__.py", line 96, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+    
+KeyboardInterrupt: 
+Exception ignored in: <function _xla_gc_callback at 0x75c92fc605e0>
+Traceback (most recent call last):
+  File "/home/yuan/VLA/openpi/.venv/lib/python3.11/site-packages/jax/_src/lib/__init__.py", line 96, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+    
+KeyboardInterrupt: 
+Exception ignored in: <function _xla_gc_callback at 0x75c92fc605e0>
+Traceback (most recent call last):
+  File "/home/yuan/VLA/openpi/.venv/lib/python3.11/site-packages/jax/_src/lib/__init__.py", line 96, in _xla_gc_callback
+    def _xla_gc_callback(*args):
+    
+KeyboardInterrupt: 
+21:13:19.830 [I] Running on: Othoni                                                               (57424:train.py:196)
+INFO:2025-10-02 21:13:20,072:jax._src.xla_bridge:925: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+21:13:20.072 [I] Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig' (57424:xla_bridge.py:925)
+INFO:2025-10-02 21:13:20,072:jax._src.xla_bridge:925: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+21:13:20.072 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (57424:xla_bridge.py:925)
