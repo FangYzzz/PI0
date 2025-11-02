@@ -41,8 +41,8 @@ class Droid_EEF_Inputs(transforms.DataTransformFn):
             # Ensure gripper position is a 1D array, not a scalar, so we can concatenate with joint positions
             gripper_pos = gripper_pos[np.newaxis]
         
-        # state= data["observation/eef_position"]
-        state = np.concatenate([data["observation/eef_position"], gripper_pos])
+        state= data["observation/eef_position"]
+        # state = np.concatenate([data["observation/eef_position"], gripper_pos])
         # print(state_q)
         # Possibly need to parse images to uint8 (H,W,C) since LeRobot automatically
         # stores as float32 (C,H,W), gets skipped for policy inference

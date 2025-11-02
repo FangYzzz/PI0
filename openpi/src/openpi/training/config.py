@@ -798,7 +798,21 @@ _CONFIGS = [
     ##########################################################################
     TrainConfig(
         name="pi0_droid_quat_eef",
-        model=pi0_config.Pi0Config(action_horizon=15), #10
+        model=pi0_config.Pi0Config(), #10
+        data=SimpleDataConfig(
+            assets=AssetsConfig(asset_id="lerobot_absolute_quat_uniform_white_flange_pnp"), #pnp_cube200  lerobot_absolute_quat_uniform_white_flange_pnp   lerobot_absolute_quat_uniform_white_flange  lerobot_absolute_uniform_white_flange
+            data_transforms=lambda model: _transforms.Group(
+                inputs=[droid_quat_eef_policy.Droid_EEF_Inputs(model_type=ModelType.PI0)],
+                outputs=[droid_quat_eef_policy.Droid_EEF_Outputs()],
+            ),
+            base_config=DataConfig(
+                prompt_from_task=True,
+            ),
+        ),
+    ),
+    TrainConfig(
+        name="pi0_droid_full_quat_eef",
+        model=pi0_config.Pi0Config(), #10
         data=SimpleDataConfig(
             assets=AssetsConfig(asset_id="lerobot_absolute_quat_uniform_white_flange_pnp"), # lerobot_absolute_quat_uniform_white_flange  lerobot_absolute_uniform_white_flange
             data_transforms=lambda model: _transforms.Group(
@@ -972,7 +986,7 @@ _CONFIGS = [
             # ),
         ),
         # weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
-        weight_loader=weight_loaders.CheckpointWeightLoader("/home/yuan/VLA/openpi/checkpoints/pi0_base_finetune_EEF/lerobot00_absolute_qaut_eef_uniform_white_flange_pnp_norm/5000/params"),
+        weight_loader=weight_loaders.CheckpointWeightLoader("/home/yuan/VLA/openpi/checkpoints/pi0_base_finetune_EEF/lerobot00_absolute_qaut_eef_uniform_white_flange_pnp_norm_02/30000/params"),
         num_train_steps=100_000,
         # The freeze filter defines which parameters should be frozen during training.
         # We have a convenience function in the model config that returns the default freeze filter

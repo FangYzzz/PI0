@@ -26,7 +26,7 @@ from PIL import Image
 from openpi_client import image_tools
 
 HF_LEROBOT_HOME = Path("/home/yuan/VLA/tele_op/lerobot")
-REPO_NAME = "lerobot_absolute_quat_uniform_white_flange_pnp" # (with pause)  # lerobot_pickup_pepper_absolute_joint(without pause)
+REPO_NAME = "pnp_cube200" # (with pause)  # lerobot_pickup_pepper_absolute_joint(without pause)
 os.environ["HF_LEROBOT_HOME"] = str(HF_LEROBOT_HOME)
 from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
@@ -239,7 +239,7 @@ def main():
                     episode_buffer.clear()
                     # current_task = input("Enter instruction: ")
                     # current_task = "pick up the pepper"
-                    current_task = "pick up the pepper and place it in the bowl"
+                    current_task = "pick up the cube and place it in the bowl"
 
                     print("🎬 Start recording a new episode.")
                 else:
